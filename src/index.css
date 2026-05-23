@@ -1,0 +1,252 @@
+/* Reseteo básico y color de fondo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a3673; /* El azul de tu diseño en Canva */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #0f2557;
+  border-bottom: 2px solid #0a183d;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #e5c07b;
+  padding: 5px 15px;
+}
+
+.logo {
+  color: #e5c07b;
+  letter-spacing: 3px;
+}
+
+.search-bar {
+  display: flex; /* Nuevo: convierte el contenedor en flexbox */
+  align-items: center; /* Nuevo: centra la lupa y el input verticalmente */
+  background-color: #0a183d;
+  border: 1px solid #3b5998;
+  border-radius: 4px; /* Un toque de redondeado para que se vea mejor */
+  padding: 0 5px; /* Espaciado interno */
+}
+
+/* Y asegurate de que el input de adentro no tenga bordes feos */
+.search-bar input {
+  flex: 1;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 15px; /* ¡NUEVO! Acá le damos el tamaño a la letra */
+  padding: 1px 10px; /* ¡MODIFICADO! Achicamos el espacio de arriba y abajo */
+}
+
+.cart-container {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-box {
+  padding: 8px 15px;
+  background-color: #0a183d;
+  border: 1px solid #3b5998;
+}
+
+/* Estilos de la caja del juego */
+.main-content {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.game-showcase {
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game-cover {
+  width: 300px;
+  border: 2px solid #3b5998;
+}
+
+.game-year {
+  text-align: center;
+  background-color: #0a183d;
+  padding: 5px;
+  margin-top: 10px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tags {
+  border: 1px solid white;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+
+.purchase-box {
+  display: flex;
+  gap: 10px;
+}
+
+.price-display h2 {
+  background-color: #0a183d;
+  padding: 15px;
+  border: 1px solid white;
+}
+
+.crud-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-add, .btn-delete, .btn-update {
+  padding: 5px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-update {
+  background-color: #4CAF50; /* Botón verde que pusiste en el diseño */
+  color: white;
+  border: none;
+}
+/* --- ESTILOS DEL MODAL (CARRITO VISUAL) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+.modal-content {
+  background-color: #0f2557;
+  border: 2px solid #3b5998;
+  width: 500px;
+  max-height: 80vh;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 2px solid #3b5998;
+}
+
+.close-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ff4c4c;
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto; /* Agrega scroll si hay muchos juegos */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #0a183d;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #1a3673;
+}
+
+.cart-thumb {
+  width: 100px;
+  margin-right: 15px;
+  border: 1px solid #3b5998;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-info h4 {
+  margin-bottom: 5px;
+}
+
+.cart-item-info p {
+  color: #4CAF50; /* Precio en verde */
+  font-weight: bold;
+}
+
+.remove-btn {
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.remove-btn:hover {
+  background-color: #cc0000;
+}
+
+.modal-footer {
+  padding: 15px 20px;
+  border-top: 2px solid #3b5998;
+  text-align: right;
+  background-color: #0a183d;
+}
+/* --- TAMAÑOS DE LAS IMÁGENES DEL LOGO --- */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index:4; /* Espacio entre las letras y el balde */
+}
+
+.navbar-text-img {
+  height: 80px; /* Ajustá esto si querés las letras más grandes o más chicas */
+  width: auto;
+}
+
+.navbar-logo-img {
+  height: 85px; /* Ajustá esto para el tamaño del balde */
+  width: auto;
+  display: block;
+  position: relative;
+  top: -5px;} /* Ajusta este valor para mover el balde hacia arriba
+}  
