@@ -50,7 +50,14 @@ export const GameShowcase = ({ cart, setCart, searchTerm }) => {
     setCart(newCart);
     alert("Juego eliminado del carrito");
   };
-
+   // boton update actualiza el precio de oferta
+  const handleUpdate = () => {
+    // Calculamos un descuento del 20%
+    const nuevoPrecio = (parseFloat(game.salePrice) * 0.8).toFixed(2);
+    // Actualizamos el estado
+    setGame({ ...game, salePrice: nuevoPrecio });
+    alert("¡Descuento aplicado! Precio actualizado.");
+  };
   if (loading) {
     return <div style={{ color: 'white', textAlign: 'center' }}>Cargando oferta del día...</div>;
   }
@@ -91,7 +98,7 @@ export const GameShowcase = ({ cart, setCart, searchTerm }) => {
           <div className="crud-buttons">
             <button className="btn-add" onClick={handleAddToCart}>añadir 🛒</button>
             <button className="btn-delete" onClick={handleDelete}>borrar</button>
-            <button className="btn-update">update</button>
+            <button className="btn-update" onClick={handleUpdate}>update</button>
           </div>
         </div>
 
