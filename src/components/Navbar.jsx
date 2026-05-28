@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 
-// Importamos AMBAS imágenes desde la carpeta assets
-import baldeTexto from '../assets/BaldeLogo.png'; // La imagen nueva con las letras
-import logoImg from '../assets/logo.png';         // La imagen del balde que ya tenías
+// imagenes de la pagina
+import baldeTexto from '../assets/BaldeLogo.png'; // fuente del logo
+import logoImg from '../assets/logo.png';         // balde logo
 
 export const Navbar = ({ cartCount, onSearch, onOpenCart }) => {
   const [inputValue, setInputValue] = useState("");
