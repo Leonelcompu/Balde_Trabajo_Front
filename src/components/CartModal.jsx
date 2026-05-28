@@ -1,5 +1,5 @@
 export const CartModal = ({ isOpen, onClose, cart, setCart }) => {
-  // Si isOpen es falso, no renderizamos nada (el modal está oculto)
+  // Si es Open es falso, no mostramos nada (el modal está oculto)
   if (!isOpen) return null;
 
   // Función para borrar un juego específico desde el carrito
