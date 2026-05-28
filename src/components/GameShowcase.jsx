@@ -6,7 +6,7 @@ export const GameShowcase = ({ cart, setCart, searchTerm }) => {
   const [game, setGame] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Este useEffect ahora "escucha" la variable searchTerm.
+  // Este useEffect ahora responde a lo que pide el usuario depende del searchTerm.
   // Si searchTerm cambia, se vuelve a ejecutar.
   useEffect(() => {
     setLoading(true);
@@ -24,7 +24,7 @@ export const GameShowcase = ({ cart, setCart, searchTerm }) => {
         if (data.length > 0) {
           setGame(data[0]);
         } else {
-          alert("No se encontró ningún juego con ese nombre 😥");
+          alert("No se encontró ningún juego con ese nombre");
         }
         setLoading(false);
       })
@@ -34,8 +34,6 @@ export const GameShowcase = ({ cart, setCart, searchTerm }) => {
       });
   }, [searchTerm]);
 
-  // Funciones del Carrito (CRUD)
-  // ... (EL RESTO DEL CÓDIGO HACIA ABAJO QUEDA EXACTAMENTE IGUAL) ...
   // Funciones del Carrito (CRUD)
   const handleAddToCart = () => {
     const alreadyInCart = cart.some((item) => item.gameID === game.gameID);
@@ -97,7 +95,7 @@ export const GameShowcase = ({ cart, setCart, searchTerm }) => {
           </div>
         </div>
 
-        {/* COMPONENTE DE RESEÑAS INTEGRADO AQUÍ */}
+        {/* Apartado de las reseñas de los juegos */}
         <div style={{ marginTop: '30px' }}>
           <ReviewSection gameID={game.gameID} />
         </div>
